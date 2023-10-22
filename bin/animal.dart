@@ -1,4 +1,6 @@
-class Animal{
+// dengan abstract class tidak dapat di inisiasi kan secara langsung melainkan harus menggunakan inheritance
+// abstract hanya sebuah sifat atau gambaran umum
+abstract class Animal{
   String name = '';
   int age = 0;
   double weight = 0 ;
