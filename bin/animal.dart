@@ -3,12 +3,7 @@ class Animal{
   int age = 0;
   double weight = 0 ;
   // constructor adalah fungsi spesial dan akan dijalankan ketika class dipanggil
-  Animal(name, age, weight){
-    this.name = name;
-    this.age = age;
-    this.weight = weight;
-
-  }
+  Animal(this.name, this.weight):age= 2;
 
   void animalName(){
     print('this animal name is $name');
