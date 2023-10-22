@@ -5,7 +5,8 @@ class Animal{
   // constructor adalah fungsi spesial dan akan dijalankan ketika class dipanggil
   Animal(name, age, weight){
     this.name = name;
-    this.
+    this.age = age;
+    this.weight = weight;
 
   }
 
