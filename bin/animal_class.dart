@@ -3,7 +3,10 @@ import "animal.dart";
 void main() {
   var fish = Fish('juki', 4.1, 'red');
   var bird = Bird("Birdy", 2.1, "blue dick");
+  var dragon = Dragon("Wilson", 90.1, "Black");
+  dragon.fly();
   bird.fly();
+  bird.walk();
   fish.eat();
   fish.animalName();
   fish.swiming();
@@ -26,7 +29,7 @@ class Fish extends Animal {
 Setelah kelas mengimplementasikan interface,
 maka kelas tersebut wajib mengimplementasikan semua metode yang ada di dalam interface
  */
-class Bird extends Animal implements Flyable {
+class Bird extends Animal implements Flyable,Walkingable {
   String featherColor;
 
   Bird(String name, double weight, this.featherColor) : super(name, weight);
@@ -37,8 +40,25 @@ class Bird extends Animal implements Flyable {
 
     print('$name is flying');
   }
+  @override
+  void walk(){
+    print('$name is walking');
+  }
+
+}
+class Dragon extends Animal with Flyable{
+  String color;
+  Dragon(String name, double weight, this.color):super(name,weight);
+}
+// mixin memiliki konsep hampir sama seperti interface namun kita tidak wajib mengoveride seluruh fungsi didalam mixin
+mixin Flyable{
+   void fly(){
+     print("im flying");
+   }
 }
 
-class Flyable {
-  void fly() {}
+mixin Walkingable{
+  void walk(){
+    print("Im walking");
+  }
 }
